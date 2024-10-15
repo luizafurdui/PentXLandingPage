@@ -27,10 +27,12 @@ export default function NavBar() {
           {/* Right Side - Navigation Links (Desktop) */}
           <div className="hidden md:flex mr-10">
             <div className="flex space-x-8">
-              <div className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Features</div>
-              <div className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Team</div>
-              <div className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Contact</div>
-              <div className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Join PentX</div>
+            <button className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Features</button>
+            <button className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Team</button>
+            <button className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Contact</button>
+            <button className="m-2 flex items-center bg-button-gradient text-white py-2 px-4 rounded-[9px]">
+              <span className="mr-2">Join PentX</span>
+            </button>
             </div>
           </div>
 
@@ -51,15 +53,27 @@ export default function NavBar() {
           </div>
         </div>
 
-        {/* Mobile Menu*/}
-        <div className={`md:hidden overflow-hidden transition-all duration-700 ease-in-out  ${isOpen ? 'max-h-40' : 'max-h-0'}`}>
-          <div className="mt-2 px-4 space-y-2">
-            <div className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Features</div>
-            <div className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Team</div>
-            <div className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Contact</div>
-            <div className="text-textColor hover:text-white font-medium cursor-pointer transition duration-300 ease-in-out">Join PentX</div>
-          </div>
-        </div>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden absolute top-16 left-0 w-full  overflow-hidden transition-all duration-700 ease-in-out ${isOpen ? 'max-h-80' : 'max-h-0'}`}>
+  <div className="bg-black">
+    <div className="flex flex-col text-lg font-medium text-white space-y-2">
+      <a href="#" className="transition duration-300 ease-in-out py-2 px-4 ">
+        Features
+      </a>
+      <a href="#" className=" transition duration-300 ease-in-out py-2 px-4">
+        Team
+      </a>
+      <a href="#" className=" transition duration-300 ease-in-out py-2 px-4 ">
+        Contact
+      </a>
+      <a href="#" className="transition duration-300 ease-in-out py-2 px-4">
+        Join PentX
+      </a>
+    </div>
+  </div>
+</div>
+
       </div>
     </nav>
   );
